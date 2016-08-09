@@ -1,8 +1,4 @@
 #!/bin/bash
-
-OSSEC_SERVER_IP="$SERVER"
-INSTANCE_TYPE="$PROFILE"
-
 if [ ! -f /etc/apt/sources.list.d/wazuh.list ]; then
 
     apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key   
@@ -17,7 +13,7 @@ if [ ! -f /var/ossec/etc/registered ]; then
 <ossec_config>
    <client>
       <server-ip>${OSSEC_SERVER_IP}</server-ip>
-      <config-profile>${INSTANCE_TYPE}</config-profile> 
+      <config-profile>${AGENT_PROFILE}</config-profile> 
       <notify_time>60</notify_time>
       <time-reconnect>180</time-reconnect>
     </client>
