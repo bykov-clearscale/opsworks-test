@@ -6,5 +6,9 @@ end
 execute "ossec_client.sh" do
   user "root"
   cwd "/tmp"
+  environment (
+  	'OSSEC_SERVER_IP' => node['OSSEC server'],
+  	'AGENT_PROFILE' => node['profile']
+  )
   command "bash ossec_client.sh"
 end
