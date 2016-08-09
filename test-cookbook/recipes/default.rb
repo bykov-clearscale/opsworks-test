@@ -3,8 +3,8 @@ cookbook_file "/tmp/ossec_client.sh" do
   mode 0755
 end
 
-execute "ossec_client.sh $SERVER $PROFILE" do
+execute "ossec_client.sh" do
   user "root"
   cwd "/tmp"
-  command "./ossec_client.sh"
+  command "bash ossec_client.sh $SERVER $PROFILE"
 end
