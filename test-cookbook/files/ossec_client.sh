@@ -1,7 +1,7 @@
 #!/bin/bash
 
-OSSEC_SERVER_IP="$1"
-INSTANCE_TYPE="$2"
+OSSEC_SERVER_IP="$SERVER"
+INSTANCE_TYPE="$PROFILE"
 
 if [ ! -f /etc/apt/sources.list.d/wazuh.list ]; then
 
